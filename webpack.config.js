@@ -1,52 +1,44 @@
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const path = require('path');
-
-// const isDev = process.env.NODE_ENV === 'development';
-// const packageName = require('./package.json').name;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
-    mode: 'production',
-    output: {
-        path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
-        filename: 'music-player-common.min.js',
-        libraryTarget: 'umd',
-        umdNamedDefine: true
-    },
+    entry: './src/js/main/main.js',
     module: {
         rules: [
             {
-                test: /\.(jsx|js)?$/,
+                test: /\.(js)?$/,
                 exclude: /node_modules/,
-                // 跟 plugins 中的設定對應
-                use: ['cache-loader', 'babel-loader',]
+                use: 'babel-loader'
             },
             {
-                test: /\.(css|scss)$/,
+                test: /\.(css)$/,
                 use: [
-                    // {loader: MiniCssExtractPlugin.loader},
+                    'style-loader',
                     'css-loader',
                     'postcss-loader',
-                    'sass-loader'
-                ]
-            },
-            {
-                test: /\.(png|jpg|gif|jpeg|webp|svg|eot|ttf|woff|woff2)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10240, // size 大於 10K 就轉成使用 asset, 小於的話就轉成 64 base
-                            // esModule: false,
-                            name: '[name]_[hash:6].[ext]'
-                        }
-                    }
                 ]
             }
         ]
     },
+    resolve: {
+        extensions: [
+            '.js',
+            '.json',
+            '.jsx'
+        ]
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
     plugins: [
-        // new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            filename: 'index.html',
+        }),
+        new CompressionPlugin({
+            test: /\.js(\?.*)?$/i
+        })
     ]
 };

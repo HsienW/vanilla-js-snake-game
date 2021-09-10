@@ -1,0 +1,14 @@
+.team-scoreboard {
+    margin: auto;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: -1px 0 #524f4d, 0 1px #524f4d, 1px 0 #524f4d, 0 -1px #524f4d;
+}
+
+.a-team {
+    color: #386994;
+}
+
+.b-team {
+    color: #f55733;
+}

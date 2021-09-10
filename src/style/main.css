@@ -1,0 +1,72 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+    background: #2c2c2c;
+    font-family: "Microsoft JhengHei";
+}
+
+#game-map {
+    background-color: #c7c7c7;
+    width: 80vmin;
+    height: 80vmin;
+    display: grid;
+    grid-template-rows: repeat(41, 1fr);
+    grid-template-columns: repeat(41, 1fr);
+}
+
+.game-countdown {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fa9e2d;
+    text-align: center;
+    text-shadow: -1px 0 #524f4d, 0 1px #524f4d, 1px 0 #524f4d, 0 -1px #524f4d;
+    margin: auto;
+}
+
+.game-control-area {
+    background-color: #c7c7c7;
+    width: 80vmin;
+    height: 9.5vmin;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.area-margin-top {
+    margin-top: 0.5vmin;
+}
+
+.area-margin-bottom {
+    margin-bottom: 0.5vmin;
+}
+
+.control-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    border-radius: 4px;
+    padding: 6px 8px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.start-button {
+    color: #ffffff;
+    background-color: #389472;
+}
+
+.pause-button {
+    color: #ffffff;
+    background-color: #945e38;
+}
+
+.finish-button {
+    color: #ffffff;
+    background-color: #943838;
+}
