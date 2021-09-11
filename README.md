@@ -3,6 +3,10 @@
 - Vanilla JS practise
 - Design Pattern practise
 
+
+## Demo link
+- [Go try the game](https://competent-khorana-6f72c1.netlify.app)
+
 ## Getting start
 ```
 cd vanilla-js-snake-game
