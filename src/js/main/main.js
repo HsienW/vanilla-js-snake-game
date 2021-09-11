@@ -2,6 +2,10 @@
 
 import {gameFinishState} from './main-game-state.js';
 import {mainView} from './main-view.js';
+import '../../style/reset.css';
+import '../../style/main.css';
+import '../../style/role.css';
+import '../../style/team.css';
 
 const Main = function () {
     this.startButton = null;
