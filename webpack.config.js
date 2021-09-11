@@ -3,9 +3,6 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
     entry: './src/js/main/main.js',
-    output: {
-        publicPath: './'
-    },
     module: {
         rules: [
             {
@@ -18,7 +15,6 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
-                    'postcss-loader',
                 ]
             }
         ]
