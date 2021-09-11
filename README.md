@@ -15,6 +15,8 @@ click start button
 - Run `npm start` for a dev server. Navigate to `http://localhost:8080`
 
 ## Game rule
+![image](https://user-images.githubusercontent.com/20525933/132933824-1c4b95b5-2d8f-46ab-9996-38121f5935c2.png)
+
 - The team is divided into red and blue
 - The snake of the blue team use the up, down, left and right of the keyboard to control the direction
 - The snake of the red team uses the keyboard W, S, A, D to control the direction
